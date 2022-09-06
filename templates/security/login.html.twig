@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+<main>
+    <article>
+
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <div class="container-fluid mt-5">
+            <div class="d-flex justify-content-center">
+                <div class="card p-4">
+                    <div class="card-body" style="width:450px">
+                        <h2 class="text-center" style="font-size: 1.5em">Sign In</h2>
+                        <form method="post">
+                            <div class="my-3">
+                                <label class="form-label" for="inputEmail">Email</label>
+                                <input id="inputEmail" class="form-control" type="email" name="email" value="{{ last_username }}" autocomplete="email" required autofocus/>
+                            </div>
+                            <div class="my-3">
+                                <label class="form-label" for="inputPassword">Password</label>
+                                <input id="inputPassword" class="form-control" type="password" name="password" autocomplete="current-password" required>
+                            </div>
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            <div class="checkbox mb-3">
+                                <label>
+                                    <input type="checkbox" name="_remember_me"> Keep me logged in
+                                </label>
+                            </div>
+                            <button class="btn btn-success my-4" type="submit" style="width: 100%">Sign In
+                            </button>
+                        </form>
+                        <a href="{{ path('app_register') }}" class="btn btn-outline-primary mb-4" style="width: 100%">Create account</a>
+
+                        {% if app.user %}
+                            <div class="mb-3 text-center">
+                                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</main>
+
+{% endblock %}
