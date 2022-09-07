@@ -11,8 +11,12 @@ class DevboardController extends AbstractController
     #[Route('/devboard', name: 'app_devboard')]
     public function index(): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
+        $user = $this->getUser();
+
         return $this->render('auth/devboard.html.twig', [
-            'controller_name' => 'DevboardController',
+            'user' => $user,
         ]);
     }
 }
