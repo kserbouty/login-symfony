@@ -1,0 +1,22 @@
+body {
+    background-color: #191919;
+    color: #fff;
+}
+
+nav {
+    background-color: #282828;
+}
+
+.card {
+    background-color: #282828;
+}
+
+.bi-arrow-return-left {
+    color: #aaa;
+    font-size: 2em;
+}
+
+.bi-arrow-return-left:hover {
+    color: #fff;
+    font-size: 2em;
+}
