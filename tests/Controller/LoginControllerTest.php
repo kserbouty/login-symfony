@@ -2,10 +2,8 @@
 
 namespace App\Tests\Controller;
 
-use App\Controller\LoginController;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class LoginControllerTest extends WebTestCase
 {
