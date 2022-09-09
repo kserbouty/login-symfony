@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class HomeControllerTest extends WebTestCase
 {
 
-    public function testRouteHomeWithStatusOK(): void
+    public function testAccessHomeReturnStatusOK(): void
     {
         $client = static::createClient();
         $client->request('GET', '/');
