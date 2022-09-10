@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Project management application started as an alternative of the Kanban system.
+Project management application centered around user stories. Provide a dashboard and task management for each iteration.
 
 ## Authors
 
