@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\WorkspaceFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,8 +16,11 @@ class DevboardController extends AbstractController
 
         $user = $this->getUser();
 
-        return $this->render('auth/devboard.html.twig', [
+        $workspace_form = $this->createForm(WorkspaceFormType::class);
+
+        return $this->renderForm('auth/devboard.html.twig', [
             'user' => $user,
+            'workspace_form' => $workspace_form
         ]);
     }
 }
