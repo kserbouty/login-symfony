@@ -26,8 +26,9 @@
                                 </div>
                                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                                 <div class="checkbox my-5">
-                                    <label>
-                                        <input type="checkbox" name="_remember_me"> Keep me signed in
+                                    <label class="d-flex flex-row">
+                                        <input type="checkbox" class="mx-2" name="_remember_me">
+                                        <span class="mx-1">Keep me signed in</span>
                                     </label>
                                 </div>
                                 <button class="btn btn-success mb-4" type="submit" style="width: 100%">Sign in
