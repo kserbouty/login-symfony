@@ -6,17 +6,19 @@
 
     {% include 'auth/nav.html.twig' %}
 
+    <h1>Another Devboard</h1>
+
     <div class="container-fluid text-dark">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-workspace"
                 style="margin: 10em">
-            Add workspace
+            + Workspace
         </button>
 
         <div id="add-workspace" aria-labelledby="label-workspace" class="modal fade" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
-                    {{ form_start(workspace_form, {'action': path('app_workspace_add'), 'method': 'POST'}) }}
+                    {{ form_start(workspace_form, {'action': path('workspace_add'), 'method': 'POST'}) }}
 
                     <div class="modal-header">
                         <h5 id="label-workspace " class="modal-title">Create workspace</h5>
@@ -39,7 +41,7 @@
 
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-                        <button type="submit" class="btn btn-primary">Create
+                        <button name="add-workspace" type="submit" class="btn btn-primary">Add workspace
                         </button>
 
                     </div>

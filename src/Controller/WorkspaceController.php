@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class WorkspaceController extends AbstractController
 {
-    #[Route('/devboard/add', name: 'app_workspace_add')]
+    #[Route('/devboard/add-workspace', name: 'workspace_add')]
     public function newWorkspace(Request $request, ManagerRegistry $managerRegistry): Response
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
@@ -32,7 +32,7 @@ class WorkspaceController extends AbstractController
             $manager->persist($workspace);
             $manager->flush();
 
-            return $this->redirectToRoute('app_devboard');
+            return $this->redirectToRoute('devboard');
         }
 
         return $this->render('auth/devboard.html.twig', [

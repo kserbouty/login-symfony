@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DevboardController extends AbstractController
 {
-    #[Route('/devboard', name: 'app_devboard')]
+    #[Route('/devboard', name: 'devboard')]
     public function index(): Response
     {
         $this->denyAccessUnlessGranted('ROLE_USER');

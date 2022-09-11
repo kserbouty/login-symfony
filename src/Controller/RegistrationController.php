@@ -15,7 +15,7 @@ use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 
 class RegistrationController extends AbstractController
 {
-    #[Route('/register', name: 'app_register')]
+    #[Route('/register', name: 'register')]
     public function register(
         Request                     $request,
         UserPasswordHasherInterface $userPasswordHasher,
