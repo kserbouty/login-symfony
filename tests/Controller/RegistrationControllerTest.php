@@ -11,7 +11,7 @@ class RegistrationControllerTest extends WebTestCase
         $client = static::createClient();
         $client->request('GET', '/register');
 
-        $this->assertResponseStatusCodeSame(200);
+        $this->assertResponseIsSuccessful();
     }
 
 }

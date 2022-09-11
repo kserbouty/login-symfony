@@ -7,15 +7,15 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class LoginControllerTest extends WebTestCase
 {
-    public function testAccessLoginReturnStatusOK(): void
+    public function testAccessLoginIsSuccessful(): void
     {
         $client = static::createClient();
         $client->request('GET', '/login');
 
-        $this->assertResponseStatusCodeSame(200);
+        $this->assertResponseIsSuccessful();
     }
 
-    public function testRedirectWhenAuthenticated(): void
+    public function testRedirectToDashboardWhenAuthenticated(): void
     {
         $client = static::createClient();
         $repository = $client->getContainer()->get(UserRepository::class);
@@ -24,7 +24,7 @@ class LoginControllerTest extends WebTestCase
         $client->loginUser($user, 'main');
         $client->request('GET', '/login');
 
-        $this->assertResponseStatusCodeSame(302);
+        $this->assertResponseRedirects('/devboard');
     }
 
 }

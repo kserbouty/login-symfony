@@ -7,11 +7,11 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class HomeControllerTest extends WebTestCase
 {
 
-    public function testAccessHomeReturnStatusOK(): void
+    public function testAccessHomeIsSuccessful(): void
     {
         $client = static::createClient();
         $client->request('GET', '/');
 
-        $this->assertResponseStatusCodeSame(200);
+        $this->assertResponseIsSuccessful();
     }
 }
