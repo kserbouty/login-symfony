@@ -20,7 +20,7 @@ security:
       custom_authenticator: App\Security\UserAuthenticator
       logout:
         path: logout
-        target: guest
+        target: login
       remember_me:
         secret: '%kernel.secret%'
         lifetime: 604800

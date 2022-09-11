@@ -7,18 +7,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DevboardController extends AbstractController
+class DashboardController extends AbstractController
 {
-    #[Route('/devboard', name: 'devboard')]
+    #[Route('/', name: 'dashboard')]
     public function index(): Response
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
 
         $user = $this->getUser();
-
         $workspace_form = $this->createForm(WorkspaceFormType::class);
 
-        return $this->renderForm('auth/devboard.html.twig', [
+        return $this->renderForm('views/dashboard.html.twig', [
             'user' => $user,
             'workspace_form' => $workspace_form
         ]);

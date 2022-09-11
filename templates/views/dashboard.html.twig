@@ -1,12 +1,10 @@
 {% extends 'shared/base.html.twig' %}
 
-{% block title %}Devboard{% endblock %}
+{% block title %}Another Devboard | Dashboard{% endblock %}
 
 {% block body %}
 
-    {% include 'auth/nav.html.twig' %}
-
-    <h1>Another Devboard</h1>
+    {% include 'shared/nav.html.twig' %}
 
     <div class="container-fluid text-dark">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-workspace"
@@ -36,14 +34,10 @@
 
                         </div>
                     </div>
-
                     <div class="modal-footer">
-
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
                         <button name="add-workspace" type="submit" class="btn btn-primary">Add workspace
                         </button>
-
                     </div>
 
                     {{ form_end(workspace_form) }}

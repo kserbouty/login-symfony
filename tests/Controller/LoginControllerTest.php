@@ -24,7 +24,7 @@ class LoginControllerTest extends WebTestCase
         $client->loginUser($user, 'main');
         $client->request('GET', '/login');
 
-        $this->assertResponseRedirects('/devboard');
+        $this->assertResponseRedirects('/');
     }
 
 }
