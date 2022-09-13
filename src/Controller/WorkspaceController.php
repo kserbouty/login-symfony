@@ -17,10 +17,10 @@ class WorkspaceController extends AbstractController
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
 
-        $workspace_form = $this->createForm(WorkspaceFormType::class);
+        $workspaceForm = $this->createForm(WorkspaceFormType::class);
 
-        return $this->renderForm('views/dashboard.html.twig', [
-            'workspace_form' => $workspace_form
+        return $this->render('views/dashboard.html.twig', [
+            'workspaceForm' => $workspaceForm->createView()
         ]);
     }
 
