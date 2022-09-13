@@ -16,7 +16,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
 
-                    {{ form_start(workspace_form, {'action': path('workspace_add'), 'method': 'POST'}) }}
+                    {{ form_start(workspaceForm, {'action': path('workspace_add'), 'method': 'POST'}) }}
 
                     <div class="modal-header">
                         <h5 id="label-workspace " class="modal-title">Create workspace</h5>
@@ -25,12 +25,12 @@
                     <div class="modal-body">
                         <div class="mb-3">
 
-                            {{ form_row(workspace_form.name) }}
+                            {{ form_row(workspaceForm.name) }}
 
                         </div>
                         <div class="mb-3">
 
-                            {{ form_row(workspace_form.description) }}
+                            {{ form_row(workspaceForm.description) }}
 
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                         </button>
                     </div>
 
-                    {{ form_end(workspace_form) }}
+                    {{ form_end(workspaceForm) }}
 
                 </div>
             </div>

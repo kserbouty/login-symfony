@@ -1,6 +1,6 @@
 body {
-    background-color: #191919;
-    color: #fff;
+    background-color: #282828;
+    color: #FAF7FF;
 }
 
 nav {
@@ -8,5 +8,50 @@ nav {
 }
 
 .card {
-    background-color: #282828;
+    background-color: #3E3C4B;
 }
+
+.register-body,
+.login-body {
+    width: 450px;
+}
+
+.register-title,
+.login-title {
+    font-size: 1.5em;
+}
+
+.register-check {
+    height: 24px;
+}
+
+.login-body button,
+.register-body button {
+    width: 100%;
+    background-color: #8685EF;
+    color: #FAF7FF;
+    border: none;
+}
+
+.login-body button:hover,
+.register-body button:hover {
+    background-color: #5F5EDE;
+    color: #FAF7FF;
+}
+
+.login-body a,
+.register-body a {
+    width: 100%;
+    background-color: #FAF7FF;
+    color: #3E3C4B;
+    border: none;
+}
+
+.login-body a:hover,
+.register-body a:hover {
+    width: 100%;
+    background-color: #c4c4c4;
+    color: #3E3C4B;
+    border: none;
+}
+
