@@ -13,10 +13,6 @@ class DashboardController extends AbstractController
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
 
-        $user = $this->getUser();
-
-        return $this->render('views/dashboard.html.twig', [
-            'user' => $user
-        ]);
+        return $this->render('views/dashboard.html.twig');
     }
 }

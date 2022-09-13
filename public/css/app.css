@@ -4,7 +4,7 @@ body {
 }
 
 nav {
-    background-color: #282828;
+    background-color: #3E3C4B;
 }
 
 .card {
@@ -28,14 +28,14 @@ nav {
 .login-body button,
 .register-body button {
     width: 100%;
-    background-color: #8685EF;
+    background-color: #5F5EDE;
     color: #FAF7FF;
     border: none;
 }
 
 .login-body button:hover,
 .register-body button:hover {
-    background-color: #5F5EDE;
+    background-color: #4E4DDB;
     color: #FAF7FF;
 }
 
@@ -50,8 +50,56 @@ nav {
 .login-body a:hover,
 .register-body a:hover {
     width: 100%;
-    background-color: #c4c4c4;
+    background-color: #C4C4C4;
     color: #3E3C4B;
     border: none;
 }
+
+#user-menu {
+    background-color: #5F5EDE;
+    color: #FAF7FF;
+    border: none;
+}
+
+#user-menu:hover {
+    background-color: #4E4DDB;
+    color: #FAF7FF;
+}
+
+.dropdown-menu {
+    background-color: #5F5EDE;
+}
+
+.dropdown-item {
+    color: #FAF7FF;
+}
+
+#workspace {
+    margin: 7em 0 8em;
+    padding: 2em;
+    height: 300px;
+    border: #5F5EDE solid 1px;
+}
+
+#workspace-btn a {
+    margin-top: 7em;
+    background-color: #5F5EDE;
+    color: #FAF7FF;
+    border: none;
+}
+
+#workspace-btn a:hover {
+    background-color: #4E4DDB;
+}
+
+#workspace-btn-modal {
+    background-color: #5F5EDE;
+    color: #FAF7FF;
+    border: none;
+}
+
+#workspace-btn-modal:hover {
+    background-color: #4E4DDB;
+}
+
 
