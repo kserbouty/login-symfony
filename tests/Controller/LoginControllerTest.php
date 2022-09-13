@@ -7,24 +7,21 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class LoginControllerTest extends WebTestCase
 {
-    public function testAccessLoginIsSuccessful(): void
+    public function testSubmitLoginForm(): void
     {
         $client = static::createClient();
-        $client->request('GET', '/login');
+        $crawler = $client->request('GET', '/login');
 
         $this->assertResponseIsSuccessful();
+
+        $button = $crawler->selectButton('login');
+        $form = $button->form();
+
+        $client->submit($form, [
+            'email' => 'johndoe@gmail.com',
+            'password' => 'secret'
+        ]);
+
+        $this->assertResponseRedirects();
     }
-
-    public function testRedirectToDashboardWhenAuthenticated(): void
-    {
-        $client = static::createClient();
-        $repository = $client->getContainer()->get(UserRepository::class);
-        $user = $repository->find(1);
-
-        $client->loginUser($user, 'main');
-        $client->request('GET', '/login');
-
-        $this->assertResponseRedirects('/');
-    }
-
 }

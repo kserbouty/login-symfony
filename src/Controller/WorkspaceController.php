@@ -12,14 +12,24 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class WorkspaceController extends AbstractController
 {
-    #[Route('/workspace-add', name: 'workspace_add')]
-    public function newWorkspace(Request $request, ManagerRegistry $managerRegistry): Response
+    #[Route('/', name: 'dashboard')]
+    public function create(): Response
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
 
-        $user = $this->getUser();
-        $form = $this->createForm(WorkspaceFormType::class);
+        $workspace_form = $this->createForm(WorkspaceFormType::class);
 
+        return $this->renderForm('views/dashboard.html.twig', [
+            'workspace_form' => $workspace_form
+        ]);
+    }
+
+    #[Route('/workspace/add', name: 'workspace_add')]
+    public function store(Request $request, ManagerRegistry $managerRegistry): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
+        $form = $this->createForm(WorkspaceFormType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -36,9 +46,6 @@ class WorkspaceController extends AbstractController
             return $this->redirectToRoute('dashboard');
         }
 
-        return $this->render('views/dashboard.html.twig', [
-            'user' => $user,
-        ]);
-
+        return $this->redirectToRoute('dashboard');
     }
 }

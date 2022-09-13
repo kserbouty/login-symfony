@@ -6,12 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class RegistrationControllerTest extends WebTestCase
 {
-    public function testAccessRegistrationReturnStatusOK(): void
+    public function testAccessRegistrationPage(): void
     {
         $client = static::createClient();
         $client->request('GET', '/register');
 
         $this->assertResponseIsSuccessful();
     }
-
 }
