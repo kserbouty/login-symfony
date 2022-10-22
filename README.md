@@ -1,16 +1,57 @@
-# Another Devboard
+# Authentication with Symfony 5
 
-> *Work in progress*
+## Features
 
-## Introduction
+- Registration.
+- Login.
+- Workspace creation as an authenticated user.
 
-Project management application centered around user stories. Provide a dashboard and task management for each iteration.
+## Installation
 
-### Features
+### Requirements
 
-- [x] Registration
-- [x] Login
-- [ ] Workspaces
+- Apache Server >=2.4
+- PHP >=7.2 with Composer
+
+### Local Installation
+
+1° Install the dependencies
+
+```bash
+composer install
+```
+
+2° Generate the .env file
+
+```bash
+composer dump-env dev
+```
+
+3° Set your database credentials in the .env file
+
+4° Create the database
+
+```bash
+php bin/console doctrine:database:create
+```
+
+5° Migrate
+
+```bash
+php bin/console doctrine:migrations:migrate
+```
+
+7° Run your server
+
+```bash
+php -S localhost:8000 -t public
+```
+
+8° Run local tests
+
+```bash
+php bin/phpunit
+```
 
 ## Authors
 
