@@ -1,11 +1,5 @@
 # Authentication with Symfony 5
 
-## Features
-
-- Registration.
-- Login.
-- Workspace creation as an authenticated user.
-
 ## Installation
 
 ### Requirements
