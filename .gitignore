@@ -8,7 +8,6 @@ phpunit.xml
 ###< phpunit ###
 
 ###> symfony ###
-.env
 .env.test
 .env.local
 .env.local.php
